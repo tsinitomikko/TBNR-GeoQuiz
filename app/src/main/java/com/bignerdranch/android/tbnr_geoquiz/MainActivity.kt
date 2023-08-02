@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bignerdranch.android.tbnr_geoquiz.databinding.ActivityMainBinding
+import kotlin.math.roundToInt
 
 private const val TAG = "MainActivity"
 
@@ -13,15 +14,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val questionBank = listOf(
-        Question(R.string.question_australia, true),
-        Question(R.string.question_oceans, true),
-        Question(R.string.question_mideast, false),
-        Question(R.string.question_africa, false),
-        Question(R.string.question_americas, true),
-        Question(R.string.question_asia, true)
+        Question(R.string.question_australia, true, null),
+        Question(R.string.question_oceans, true, null),
+        Question(R.string.question_mideast, false, null),
+        Question(R.string.question_africa, false, null),
+        Question(R.string.question_americas, true, null),
+        Question(R.string.question_asia, true, null)
     )
 
     private var currentIndex = 0
+    private var currentScore = 0
+    private var currentAnswers = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +81,8 @@ class MainActivity : AppCompatActivity() {
     private fun updateQuestion() {
         val questionTextResId = questionBank[currentIndex].textResId
         binding.questionTextView.setText(questionTextResId)
+
+        setEnabledAnswerButtons()
     }
 
     private fun checkAnswer(userAnswer: Boolean) {
@@ -90,5 +95,42 @@ class MainActivity : AppCompatActivity() {
         }
 
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show()
+
+        questionBank[currentIndex].userAnswer = userAnswer
+
+        currentAnswers++
+
+        if (userAnswer == correctAnswer) {
+            currentScore++
+        }
+
+        setEnabledAnswerButtons(false)
+
+        showScore()
+    }
+
+    private fun setEnabledAnswerButtons() {
+        val userAnswer = questionBank[currentIndex].userAnswer
+
+        if (userAnswer == null) {
+            setEnabledAnswerButtons(true)
+        } else {
+            setEnabledAnswerButtons(false)
+        }
+    }
+
+    private fun setEnabledAnswerButtons(isEnabled: Boolean) {
+        binding.trueButton.isEnabled = isEnabled
+        binding.falseButton.isEnabled = isEnabled
+    }
+
+    private fun showScore() {
+        if (currentAnswers == questionBank.size) {
+            val score = currentScore.toFloat().div(currentAnswers).times(100).roundToInt()
+
+            Toast.makeText(
+                this, "Your score: $score%", Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }
