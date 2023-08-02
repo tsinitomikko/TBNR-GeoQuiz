@@ -21,4 +21,18 @@ class QuizViewModelTest {
         quizViewModel.moveToNext()
         Assert.assertEquals(R.string.question_australia, quizViewModel.currentQuestionText)
     }
+
+    @Test
+    fun providesTrueAnswerToQuestion() {
+        val savedStateHandle = SavedStateHandle(mapOf(CURRENT_INDEX_KEY to 1))
+        val quizViewModel = QuizViewModel(savedStateHandle)
+        Assert.assertTrue(quizViewModel.currentQuestionAnswer)
+    }
+
+    @Test
+    fun providesFalseAnswerToQuestion() {
+        val savedStateHandle = SavedStateHandle(mapOf(CURRENT_INDEX_KEY to 2))
+        val quizViewModel = QuizViewModel(savedStateHandle)
+        Assert.assertFalse(quizViewModel.currentQuestionAnswer)
+    }
 }
