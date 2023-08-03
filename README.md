@@ -14,6 +14,21 @@ Once the application is running, you can
 1. Checkout a branch to view codes by chapter
 2. Checkout a branch to see my solutions per challenge
 
+# Usage
+Screenshot
+
+Chapter 1
+
+![ch01-your-first-android-application-1](https://github.com/tsinitomikko/TBNR-GeoQuiz/assets/18387920/5c2bbddc-0b80-494d-b4e1-3c6c40f9db7e)
+
+...
+
+Chapter 8
+
+![ch08-android-sdk-verson-and-compatibility](https://github.com/tsinitomikko/TBNR-GeoQuiz/assets/18387920/3e6b4a9e-c615-408a-a2e1-5e49e05ad65c)
+
+
+
 # Contributing
 If you'd like to contribute to this project, please feel free to fork the repository and open a pull request.
 
