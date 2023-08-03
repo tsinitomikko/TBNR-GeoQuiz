@@ -1,4 +1,4 @@
-package com.bignerdranch.android.tbnr_geoquiz
+package com.bignerdranch.android.geoquiz
 
 import androidx.lifecycle.SavedStateHandle
 import org.junit.Assert
