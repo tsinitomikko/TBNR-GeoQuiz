@@ -1,14 +1,14 @@
-package com.bignerdranch.android.tbnr_geoquiz
+package com.bignerdranch.android.geoquiz
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.bignerdranch.android.tbnr_geoquiz.databinding.ActivityCheatBinding
+import com.bignerdranch.android.geoquiz.databinding.ActivityCheatBinding
 
-const val EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.tbnr_geoquiz.answer_shown"
-private const val EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.tbnr_geoquiz.answer_is_true"
+const val EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown"
+private const val EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geoquiz.answer_is_true"
 
 class CheatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheatBinding

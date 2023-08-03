@@ -1,4 +1,4 @@
-package com.bignerdranch.android.tbnr_geoquiz
+package com.bignerdranch.android.geoquiz
 
 import android.app.Activity
 import android.graphics.RenderEffect
@@ -11,7 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.bignerdranch.android.tbnr_geoquiz.databinding.ActivityMainBinding
+import com.bignerdranch.android.geoquiz.databinding.ActivityMainBinding
 
 private const val TAG = "MainActivity"
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.bignerdranch.android.tbnr_geoquiz"
+    namespace = "com.bignerdranch.android.geoquiz"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.bignerdranch.android.tbnr_geoquiz"
+        applicationId = "com.bignerdranch.android.geoquiz"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

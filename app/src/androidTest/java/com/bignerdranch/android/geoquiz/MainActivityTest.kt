@@ -1,4 +1,4 @@
-package com.bignerdranch.android.tbnr_geoquiz
+package com.bignerdranch.android.geoquiz
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ActivityScenario.launch
